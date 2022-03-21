@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Oppgave 4</h1>
+    
+    <form>
+        <label for="navn">Ditt navn:</label>
+        <input type="text" name="navn"><br>
+        <label for="alder">Din alder: </label> 
+        <input type="number" name="alder" min="12" max="100"><br>
+        <label for="juice">Din favorit juice: </label>
+        <p>Appelsinjuice</p>
+        <input type="radio" name="juice" value="Appelsinjuice"> 
+        <p>Epplejuice</p>
+        <input type="radio" name="juice" value="Epplejuice">
+        <br>
+        <input type="submit"><br>
+        <textarea name="output" id="output"></textarea>
+    </form>
+
+    <script>
+        var formEl = document.forms[0];
+
+        formEl.addEventListener('submit', function(e) {
+            formEl.output.value = "Hei dit navn er: " + formEl.navn.value + ", du er " + formEl.alder.value + " år gammel. Og din favoritt juice er " + formEl.juice.value + "."
+            e.preventDefault();
+        });
+
+
+
+    </script>
+</body>
+</html>

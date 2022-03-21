@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Oppgave 1</h1>
+    <p>Ditt navn: </p>
+    
+    <form>
+        <label for="navn">Navn:</label>
+        <input type="text" name="navn" id="navn">
+        <input type="submit" value="si hei">
+    </form>
+
+
+
+    <!--
+        <input id="navn" type="text">
+        <input type="button" onmousedown="hello()" value="Si hei">
+    -->
+
+
+
+
+
+    <script>
+        'use strict'
+        var formEl = document.forms[0];
+        formEl.addEventListener('submit', function(e) {
+            console.log("Hei " + formEl.navn.value);
+            e.preventDefault();});
+    </script>
+</body>
+</html>

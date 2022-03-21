@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Oppgave2</h1>
+
+    <form>
+        <label for="navn">Navn</label>
+        <input type="text" name="navn">
+        <input type="submit" value="si hei">
+        <label for="output">Output</label>
+        <textarea id="output" name="output"></textarea>
+    </form>
+
+    <script>
+        formEl = document.forms[0];
+        formEl.addEventListener('submit', function (e){
+           console.log("Halloe der " + formEl.navn.value)
+            formEl.output.value = "Hallo der " + formEl.navn.value
+            e.preventDefault();
+        })
+    </script>
+</body>
+</html> 

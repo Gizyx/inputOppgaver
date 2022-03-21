@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Oppgave2</h1>
+
+    <form>
+        <label for="navn">Ditt navn:</label>
+        <input type="text" name="navn">
+        <label for="alder">Din alder: </label>
+        <input type="number" name="alder" min="9" max="120">
+        <input type="submit" value="si hei">
+        <textarea id="output"></textarea>
+    </form>
+
+    <script>
+        formEl = document.forms[0];
+        formEl.addEventListener('submit', function (e){
+           console.log("Halloe der " + formEl.navn.value)
+            formEl.output.value = "Hei jeg heter " + formEl.navn.value + " og er " + formEl.alder.value + " år gammel."
+            e.preventDefault();
+        })
+    </script>
+</body>
+</html> 

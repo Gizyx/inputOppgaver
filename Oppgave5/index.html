@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Oppgave5</h1>
+    <form>
+        <label for="navn">Ditt navn: </label>
+        <input type="text" name="navn"><br>
+        <label for="alder">Din alder: </label>
+        <input type="number" name="alder"><br>
+        <label for="drikke">Din favoritt drikke: </label><br>
+        <div>
+            <input type="radio" name="drikke" id="vann" value="vann">
+            <label for="vann">Vann</label>
+        </div>
+        <div>
+            <input type="radio" name="drikke" id="saft" value="saft">
+            <label for="saft">Saft</label>
+        </div>
+        <div>
+            <input type="radio" name="drikke" id="solo" value="solo">
+            <label for="solo">Solo</label>
+        </div>
+        <label for="favMat">favoritt mat: </label>
+        <div>
+            <input type="checkbox" name="favMat" id="lasagna" value="lasagne">
+            <label for="lasagne">lasagne</label>
+        </div>
+        <div>
+            <input type="checkbox" name="favMat" id="chili" value="chili con carne">
+            <label for="chili">Chili con carne</label>
+        </div>
+        <div>
+            <input type="checkbox" name="favMat" id="pizza" value="pizza">
+            <label for="pizza">pizza</label>
+        </div>
+
+        <input type="submit" value="submit form"><br>
+
+        <textarea name="output" id="output" rows="5" cols="50"></textarea>
+    </form>
+
+
+    <script>
+        var formEl = document.forms[0];
+
+        formEl.addEventListener('submit', function(e){
+            var mat = ""
+            for (var i=0; i <= 2; i++) {
+                if (formEl.favMat[i].checked) {
+                    mat = mat + ", " +formEl.favMat[i].value
+                } 
+            };
+            mat = mat.substring(1)
+            formEl.output.value = "Hei dit navn er: " + formEl.navn.value + '\r\n' + "Du er " + formEl.alder.value + " år gammel." + '\r\n' + "Din favoritt juice er " + formEl.drikke.value + "." + '\r\n' + "Dine favorit retter er:" + mat +"."
+            e.preventDefault();
+        });
+
+
+    </script>
+</body>
+</html>
